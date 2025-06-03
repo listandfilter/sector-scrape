@@ -5,7 +5,7 @@ function getStockandNameFromCSV() {
   return new Promise((resolve, reject) => {
     const stocks = [];
 
-    fs.createReadStream('stock.csv')
+    fs.createReadStream('stocks.csv')
       .pipe(csv())
       .on('data', (row) => {
         const name = row['Stock name'] || Object.values(row)[0];
